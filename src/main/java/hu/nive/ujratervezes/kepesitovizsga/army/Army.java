@@ -38,16 +38,20 @@ public class Army {
     public void damageAll(int damage) {
         for (MilitaryUnit item : army) {
             changeHealthPoints(item, damage);
+            System.out.println(item.getHealthPoints());
             changeArmySize(item);
         }
+        System.out.println("/");
 
-        //int i = 0;
-        //for (Iterator<MilitaryUnit> item = army.iterator(); item.hasNext();){
-        //    if (army.get(i).getHealthPoints() < 25){
-        //        item.remove();
-        //    }
-        //    i++;
-        //}
+
+        for (Iterator<MilitaryUnit> item = army.iterator(); item.hasNext();){
+            MilitaryUnit unit = item.next();
+            if(unit.getHealthPoints() < 25){
+                item.remove();
+            }
+
+
+        }
 
     }
 
